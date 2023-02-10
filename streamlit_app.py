@@ -113,7 +113,7 @@ with col1:
 with col2:
     pass
 with col4:
-    pass
+    interval = st.checkbox("Prediction interval")
 with col5:
     pass
 with col3 :
@@ -134,7 +134,8 @@ if center_button:
     
     plt.plot(delta_vec[0:3], psa_vec[0:3], "k-", label = "Past PSAs")
     plt.plot([delta_vec[2], delta_vec[3]], [psa_t1, med_pred], "r:", label = "Predicted median")
-    plt.fill_between([delta_vec[2], delta_vec[3]], [psa_t1, low_pred], [psa_t1, high_pred], alpha = 0.1, color="red", label = "80% interval prediction", linewidth = 2)
+    if interval:
+        plt.fill_between([delta_vec[2], delta_vec[3]], [psa_t1, low_pred], [psa_t1, high_pred], alpha = 0.1, color="red", label = "80% interval prediction", linewidth = 2)
     
     plt.xlim((delta_t3 - 10, max(delta_vec) + 10)) 
     plt.ylim((0, (max(psa_vec) + 5)))

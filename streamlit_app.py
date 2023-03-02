@@ -82,28 +82,24 @@ black = (race == "Black") * 1
 asian = (race == "Asian") * 1
 hispanic = (race == "Hispanic") * 1
 other = (race == "Other") * 1
+
+with cols_recent[0]:
+    
+    st.markdown("\n")
+    st.markdown("\n")
+    st.markdown("Twice prior to most recent")
+
+with cols_recent[1]:
+    
+    date_psa1 = st.date_input("", min_value = date_diag, value = datetime.datetime(2020, 8, 10))
+    ddiag1 = (date_psa1 - date_diag).days
+    delta_t3 = np.floor(ddiag1/30.5)
     
     
+with cols_recent[2]:
     
-with cols_psa[0]:
-        #psa_t3 = st.number_input("PSA at t-3", min_value = 0.0, value = 6.0, step = 0.1)
-        st.markdown("\n")
-        st.markdown("\n")
-        st.markdown("\n")
-        st.markdown("\n")
-        st.markdown("\n")
-        st.markdown("Most recent")
-        
-with cols_psa[1]:
-        st.markdown("<h6 style='text-align: center'>Dates</h6>", unsafe_allow_html = True)    
-        date_psa1 = st.date_input("", min_value = date_diag, value = datetime.datetime(2020, 8, 10))
-        ddiag1 = (date_psa1 - date_diag).days
-        delta_t3 = np.floor(ddiag1/30.5)
-        
-with cols_psa[2]:
-        st.markdown("<h6 style='text-align: center'>PSA values</h6>", unsafe_allow_html = True)    
-        psa_t3 = st.number_input("", min_value = 0.0, value = 6.0, step = 0.1)
-        
+    psa_t3 = st.number_input("", min_value = 0.0, value = 6.0, step = 0.1)
+
 with cols_delta[0]:
     
     st.markdown("\n")
@@ -121,23 +117,26 @@ with cols_delta[1]:
 with cols_delta[2]:
     
     psa_t2 = st.number_input("", min_value = 0.0, value = 5.0, step = 0.1)
-    #delta_t = delta_t1 + st.number_input("Number of days between t and t+1", value = 30)
-
-with cols_recent[0]:
+    #delta_t = delta_t1 + st.number_input("Number of days between t and t+1", value = 30)    
     
-    st.markdown("\n")
-    st.markdown("\n")
-    st.markdown("Twice prior to most recent")
-
-with cols_recent[1]:
-    
-    date_psa3 = st.date_input("Date of t PSA assessment", value = datetime.datetime(2021, 5, 10), min_value = date_psa2)
-    ddiag3 = ddiag2 + (date_psa3 - date_psa1).days
-    delta_t1 = delta_t2 + np.floor(ddiag3/30.5)
-    
-with cols_recent[2]:
-    
-    psa_t1 = st.number_input("PSA at t-1", min_value = 0.0, value = 7.0, step = 0.1)
+with cols_psa[0]:
+        #psa_t3 = st.number_input("PSA at t-3", min_value = 0.0, value = 6.0, step = 0.1)
+        st.markdown("\n")
+        st.markdown("\n")
+        st.markdown("\n")
+        st.markdown("\n")
+        st.markdown("\n")
+        st.markdown("Most recent")
+        
+with cols_psa[1]:
+        st.markdown("<h6 style='text-align: center'>Dates</h6>", unsafe_allow_html = True)    
+        date_psa3 = st.date_input("", value = datetime.datetime(2021, 5, 10), min_value = date_psa2)
+        ddiag3 = ddiag2 + (date_psa3 - date_psa1).days
+        delta_t1 = delta_t2 + np.floor(ddiag3/30.5)
+        
+with cols_psa[2]:
+        st.markdown("<h6 style='text-align: center'>PSA values</h6>", unsafe_allow_html = True)    
+        psa_t1 = st.number_input("", min_value = 0.0, value = 7.0, step = 0.1)
     
 next_psa = st.selectbox("Months to next expected PSA assessment", (3, 6, 12, 24))
 

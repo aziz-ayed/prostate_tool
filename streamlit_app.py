@@ -20,7 +20,7 @@ low_model = pickle.load(open('models/low_model.sav', 'rb'))
 #st.title("Next PSA value prediction using longitudinal data")
 
 st.markdown("<h1 style='text-align: center'>Estimating Future PSA in Patients on Active Surveillance for Prostate Cancer</h1>", unsafe_allow_html = True)
-st.markdown("<h6>Authors: Aziz Ayed, Samuel Carbunaru, Claire-Alix Saillard, John A. Onofrey, Intae Moon, Steven L. Chang, Adam S. Feldman, Madhur Nayan</h6>", unsafe_allow_html = True)
+st.markdown("<h6>Authors: Aziz Ayed, Samuel Carbunaru, John A. Onofrey, Claire-Alix Saillard, Intae Moon, Steven L. Chang, Adam S. Feldman, Madhur Nayan</h6>", unsafe_allow_html = True)
 
 st.markdown("<h3 style='text-align: center'>Clinical features</h1>", unsafe_allow_html = True)
 

@@ -144,10 +144,10 @@ delta_t = delta_t1 + next_psa
 
 ddiag4 = ddiag3 + np.floor(next_psa * 30.5)
     
-input_dict = {"PSA_t-3": psa_t3, "delta_t-3": delta_t3/30, "bmi_t-3": bmi_t3,
-              "PSA_t-2": psa_t2, "delta_t-2": delta_t2/30, "bmi_t-2": bmi_t2,
-              "PSA_t-1": psa_t1, "delta_t-1": delta_t1/30, "bmi_t-1": bmi_t1,
-              "delta_t": delta_t/12, "age_diag": age_diag, "Asian": asian, "Black": black,
+input_dict = {"PSA_t-3": psa_t3, "delta_t-3": delta_t3, "bmi_t-3": bmi_t3,
+              "PSA_t-2": psa_t2, "delta_t-2": delta_t2, "bmi_t-2": bmi_t2,
+              "PSA_t-1": psa_t1, "delta_t-1": delta_t1, "bmi_t-1": bmi_t1,
+              "delta_t": delta_t, "age_diag": age_diag, "Asian": asian, "Black": black,
               "Hispanic": hispanic, "Unknown/other": other, "White": white, 
               "wscore_agg": comorb, "prostate_volume": volume}
 
